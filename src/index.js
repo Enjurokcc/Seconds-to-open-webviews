@@ -1,1 +1,0 @@
-isoverScroll || isreturnClick || isreturnover 

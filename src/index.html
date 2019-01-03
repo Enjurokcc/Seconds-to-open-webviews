@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>defineProperty</title>
+	<script src="/js/observer.js"></script>
+	<script src="/js/watcher.js"></script>
+	<script src="/js/compile.js"></script>
+	<script src="/js/mvvm.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
+</head>
+<body>
+	<div id="mvvm-app">
+    <input type="text" v-model="word">
+    <p>{{word}}<i></i></p>
+    <button v-on:click="sayHi">change model</button>
+</div>
+
+
+<script>
+    var vm = new MVVM({
+        el: '#mvvm-app',
+        data: {
+            word: 'Hello World!!'
+        },
+        methods: {
+            sayHi: function() {
+                this.word = 'Hi, everybody!';
+            },
+            b : function(){
+                console.log(222)
+            }
+        }
+    });
+
+   
+   //console.log([].slice.call({length:2,0:'first',1:'second'}))
+
+// var a= {}
+// Object.defineProperty(a,"b",{
+//   set:function(newValue){
+//     console.log("你要赋值给我,我的新值是"+newValue)
+//     },
+//   get:function(){
+//     console.log("你取我的值")
+//     return 2 //注意这里，我硬编码返回2
+//    }
+// })
+// a.b =1 //打印 你要赋值给我,我的新值是1
+// console.log(a.b)
+
+
+</script>
+
+</body>
+</html>
